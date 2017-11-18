@@ -52,6 +52,8 @@ public class DB extends SQLiteOpenHelper {
             Toast.makeText(context, "due : "+e, Toast.LENGTH_SHORT).show();
         }
 
+
+
     }
 
     public boolean insert( String title,String details){
@@ -72,16 +74,22 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
-    public  boolean update(String title ,String detail){
+
+
+    public  boolean update(String id ,String title ,String detail){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(Title,title);
         contentValues.put(Details,detail);
-        db.update(tableName, contentValues,Title +"= ?",new String[]{title});
+        contentValues.put(Uer_id,id);
+        db.update(tableName, contentValues,Uer_id +"= ?",new String[]{id});
+
 
 
         return true;
     }
+
+
     public Integer delete(String title){
         SQLiteDatabase db=this.getWritableDatabase();
         return   db.delete(tableName,Title +"= ?",new String[]{title});

@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ok.sqlite.Adapter.Adapter;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,6 +31,9 @@ public class Edit extends AppCompatActivity {
     @BindView(R.id.imgckeck)
     Button check;
 
+    public String  Id = title.getText().toString();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +42,8 @@ public class Edit extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent i= getIntent();
-         String tit =i.getStringExtra("title");
-       String det= i.getStringExtra("detail");
+         String tit =i.getStringExtra("title").trim();
+       String det= i.getStringExtra("detail").trim();
         title.setText(tit);
         details.setText(det);
 
@@ -47,10 +52,10 @@ public class Edit extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String titjj = title.getText().toString();
-                String detjj = details.getText().toString();
-              //  String id = null;
-                boolean result = data.update(titjj, detjj);
+                String titjj = title.getText().toString().trim();
+                String detjj = details.getText().toString().trim();
+
+                boolean result = data.update(Adapter.position+1+"",titjj, detjj);
                 if (result == true) {
                     Toast.makeText(Edit.this, "Update success", Toast.LENGTH_SHORT).show();
                     title.setText(" ");
@@ -76,18 +81,19 @@ public class Edit extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+delet();
 
-                String Id = title.getText().toString();
-                Integer result = data.delete(Id);
-                if (result > 0) {
-                    Toast.makeText(Edit.this, "Delete", Toast.LENGTH_SHORT).show();
-
-                } else {
-                    Toast.makeText(Edit.this, "error ", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
     }
+public void delet(){
+    Integer result = data.delete(Id);
+                if (result > 0) {
+        Toast.makeText(Edit.this, "Delete", Toast.LENGTH_SHORT).show();
+
+    } else {
+        Toast.makeText(Edit.this, "error ", Toast.LENGTH_SHORT).show();
+    }}
 
 }
