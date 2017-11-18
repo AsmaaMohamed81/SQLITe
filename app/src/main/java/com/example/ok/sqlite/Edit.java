@@ -1,8 +1,8 @@
 package com.example.ok.sqlite;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +23,9 @@ public class Edit extends AppCompatActivity {
     @BindView(R.id.btn_save)
     Button save;
 
+    @BindView(R.id.imgdelete)
+    Button delete;
+
     @BindView(R.id.imgckeck)
     Button check;
 
@@ -34,7 +37,7 @@ public class Edit extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent i= getIntent();
-        String tit =i.getStringExtra("title");
+        final String tit =i.getStringExtra("title");
        String det= i.getStringExtra("detail");
         title.setText(tit);
         details.setText(det);
@@ -67,6 +70,21 @@ public class Edit extends AppCompatActivity {
 
                 Intent i = new Intent(Edit.this,Recycle.class);
                 startActivity(i);
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String Id = title.getText().toString();
+                Integer result = data.delete(Id);
+                if (result > 0) {
+                    Toast.makeText(Edit.this, "Delete", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(Edit.this, "error ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

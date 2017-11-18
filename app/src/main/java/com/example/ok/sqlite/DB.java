@@ -82,7 +82,11 @@ public class DB extends SQLiteOpenHelper {
 
         return true;
     }
+    public Integer delete(String title){
+        SQLiteDatabase db=this.getWritableDatabase();
+        return   db.delete(tableName,Title +"= ?",new String[]{title});
 
+    }
 
 
 
