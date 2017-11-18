@@ -73,11 +73,11 @@ public class DB extends SQLiteOpenHelper {
     }
 
     public  boolean update(String title ,String detail){
-        SQLiteDatabase sq=this.getWritableDatabase();
+        SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(Title,title);
         contentValues.put(Details,detail);
-        sq.update(tableName, contentValues,Title +"= ?",new String[]{title});
+        db.update(tableName, contentValues,Title +"= ?",new String[]{title});
 
 
         return true;

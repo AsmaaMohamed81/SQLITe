@@ -37,7 +37,7 @@ public class Edit extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent i= getIntent();
-        final String tit =i.getStringExtra("title");
+         String tit =i.getStringExtra("title");
        String det= i.getStringExtra("detail");
         title.setText(tit);
         details.setText(det);
@@ -47,10 +47,10 @@ public class Edit extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tit = title.getText().toString();
-                String det = details.getText().toString();
+                String titjj = title.getText().toString();
+                String detjj = details.getText().toString();
               //  String id = null;
-                boolean result = data.update(tit, det);
+                boolean result = data.update(titjj, detjj);
                 if (result == true) {
                     Toast.makeText(Edit.this, "Update success", Toast.LENGTH_SHORT).show();
                     title.setText(" ");

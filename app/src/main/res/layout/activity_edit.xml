@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1009A"
+    android:padding="@dimen/_13sdp"
+    android:orientation="vertical"
+    tools:context="com.example.ok.sqlite.MainActivity">
+    <TextView
+        android:id="@+id/Txtdata"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:background="@drawable/text"
+        android:paddingTop="@dimen/_7sdp"
+
+        android:textColor="#817e7e"
+        android:textSize="@dimen/_20sdp"
+        android:drawableRight="@mipmap/dat"/>
+    <EditText
+        android:layout_marginTop="@dimen/_10sdp"
+
+        android:id="@+id/EDTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:background="@drawable/text"
+        android:hint="اضف عنوانك"
+        android:textColor="#817e7e"
+        android:textSize="@dimen/_20sdp"
+        android:drawableRight="@mipmap/edite"/>
+
+    <EditText
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/EDdetail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_190sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:background="@drawable/text"
+        android:hint="ابدا الكتابه هنا"
+        android:textColor="#817e7e"
+        android:gravity="top"
+        android:padding="@dimen/_7sdp"
+        android:textSize="@dimen/_20sdp"
+        />
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="حفظ"
+        android:textColor="#ffff"
+        android:background="#8B0067"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+    <Button
+        android:id="@+id/imgckeck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="عرض"
+        android:textColor="#ffff"
+        android:background="#8B0067"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+
+    <Button
+        android:id="@+id/imgdelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="مسح"
+        android:textColor="#ffff"
+        android:background="#8B0067"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+
+
+</LinearLayout>
