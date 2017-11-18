@@ -14,6 +14,7 @@
         android:layout_height="@dimen/_40sdp"
         android:paddingRight="@dimen/_5sdp"
         android:background="@drawable/text"
+        android:paddingTop="@dimen/_7sdp"
 
         android:textColor="#817e7e"
         android:textSize="@dimen/_20sdp"

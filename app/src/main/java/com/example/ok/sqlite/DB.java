@@ -54,7 +54,7 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
-    public boolean insert(String title,String details){
+    public boolean insert( String title,String details){
         SQLiteDatabase sq=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(Title,title);
@@ -69,7 +69,23 @@ public class DB extends SQLiteOpenHelper {
         }
 
 
+
     }
+
+    public  boolean update(String title ,String detail){
+        SQLiteDatabase sq=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(Title,title);
+        contentValues.put(Details,detail);
+        sq.update(tableName, contentValues,Title +"= ?",new String[]{title});
+
+
+        return true;
+    }
+
+
+
+
     public List<Note> getDat(){
 
         List<Note> list= new ArrayList<>();

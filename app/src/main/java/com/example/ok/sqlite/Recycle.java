@@ -36,7 +36,7 @@ public class Recycle extends AppCompatActivity {
 
         datamodel=database.getDat();
 
-        recycler =new Adapter(datamodel);
+        recycler =new Adapter(datamodel,this);
 
 
         Log.i("HIteshdata",""+datamodel);

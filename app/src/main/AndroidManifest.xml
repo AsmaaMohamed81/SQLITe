@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Recycle"></activity>
+        <activity android:name=".Recycle" />
+        <activity android:name=".Edit"></activity>
     </application>
 
 </manifest>
