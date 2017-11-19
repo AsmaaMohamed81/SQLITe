@@ -85,7 +85,6 @@ public class DB extends SQLiteOpenHelper {
         db.update(tableName, contentValues,Uer_id +"= ?",new String[]{id});
 
 
-
         return true;
     }
 

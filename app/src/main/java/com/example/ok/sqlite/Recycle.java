@@ -1,5 +1,6 @@
 package com.example.ok.sqlite;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -69,8 +70,11 @@ public class Recycle extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.delete:
-               // newGame();
+            case R.id.add:
+                Intent intent=new Intent(Recycle.this,MainActivity.class);
+                startActivity(intent);
+
+
                 return true;
             case R.id.share:
                // showHelp();

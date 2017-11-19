@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText details;
     @BindView(R.id.Txtdata)
     TextView datetext;
-    @BindView(R.id.btn_save)
+    @BindView(R.id.btn_update)
     Button save;
 
     @BindView(R.id.imgckeck)
@@ -45,7 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         calendar = Calendar.getInstance();
         date = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
-        DatePicker();
+
+        datetext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePicker();
+
+            }
+        });
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

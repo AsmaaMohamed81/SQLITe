@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:paddingRight="@dimen/_5sdp"
+        android:padding="@dimen/_7sdp"
         android:background="@drawable/text"
         android:hint="اضف عنوانك"
         android:textColor="#817e7e"
@@ -46,10 +47,10 @@
         android:textSize="@dimen/_20sdp"
         />
     <Button
-        android:id="@+id/btn_save"
+        android:id="@+id/btn_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="حفظ"
+        android:text="تعديل"
         android:textColor="#ffff"
         android:background="#8B0067"
         android:layout_marginTop="@dimen/_10sdp"
@@ -66,15 +67,15 @@
         />
 
 
-    <Button
-        android:id="@+id/imgdelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="مسح"
-        android:textColor="#ffff"
-        android:background="#8B0067"
-        android:layout_marginTop="@dimen/_10sdp"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/imgdelete"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="مسح"-->
+        <!--android:textColor="#ffff"-->
+        <!--android:background="#8B0067"-->
+        <!--android:layout_marginTop="@dimen/_10sdp"-->
+        <!--/>-->
 
 
 

@@ -3,6 +3,9 @@ package com.example.ok.sqlite;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,16 +25,14 @@ public class Edit extends AppCompatActivity {
     EditText details;
     @BindView(R.id.Txtdata)
     TextView datetext;
-    @BindView(R.id.btn_save)
-    Button save;
+    @BindView(R.id.btn_update)
+    Button upDate;
 
-    @BindView(R.id.imgdelete)
-    Button delete;
+
 
     @BindView(R.id.imgckeck)
     Button check;
 
-    public String  Id = title.getText().toString();
 
 
     @Override
@@ -49,7 +50,7 @@ public class Edit extends AppCompatActivity {
 
 
 
-        save.setOnClickListener(new View.OnClickListener() {
+        upDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String titjj = title.getText().toString().trim();
@@ -78,16 +79,11 @@ public class Edit extends AppCompatActivity {
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-delet();
-
-            }
-        });
 
     }
 public void delet(){
+     String  Id = title.getText().toString();
+
     Integer result = data.delete(Id);
                 if (result > 0) {
         Toast.makeText(Edit.this, "Delete", Toast.LENGTH_SHORT).show();
@@ -95,5 +91,26 @@ public void delet(){
     } else {
         Toast.makeText(Edit.this, "error ", Toast.LENGTH_SHORT).show();
     }}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.edite, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.delete:
+                 delet();
+                return true;
+            case R.id.share:
+                // showHelp();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

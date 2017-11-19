@@ -2,15 +2,12 @@ package com.example.ok.sqlite.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ok.sqlite.DB;
 import com.example.ok.sqlite.Edit;
@@ -114,46 +111,46 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Vie
         public boolean onLongClick(View view) {
 
 
-            //Creating the instance of PopupMenu
-            PopupMenu popup = new PopupMenu(recycle, con);
-            //Inflating the Popup using xml file
-            popup.getMenuInflater()
-                    .inflate(R.menu.all, popup.getMenu());
+//            //Creating the instance of PopupMenu
+//            PopupMenu popup = new PopupMenu(recycle, con);
+//            //Inflating the Popup using xml file
+//            popup.getMenuInflater()
+//                    .inflate(R.menu.all, popup.getMenu());
 
             //registering popup with OnMenuItemClickListener
-            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                public boolean onMenuItemClick(MenuItem item) {
-                    // Handle item selection
-                    switch (item.getItemId()) {
-                        case R.id.delete:
-                            // newGame();
+//            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                public boolean onMenuItemClick(MenuItem item) {
+//                    // Handle item selection
+//                    switch (item.getItemId()) {
+//                        case R.id.delete:
+//                            // newGame();
+//
+////                            Integer result = dataa.delete(f.Id);
+////                            if (result > 0) {
+////                                Toast.makeText(recycle, "Delete", Toast.LENGTH_SHORT).show();
+////
+////                            } else {
+////                                Toast.makeText(recycle, "error ", Toast.LENGTH_SHORT).show();
+////                            }
+//
+//                    return true;
+//                        case R.id.share:
+//                            // showHelp();
+//                            return true;
+//                        case R.id.selectall:
+//                            // showHelp();
+//                            return true;
+//                        default:
+//                    }                    return true;
+//                }
+//            });
+//
+//
+//            popup.show(); //showing popup menu
+//
+          return true;
 
-                            Integer result = dataa.delete(f.Id);
-                            if (result > 0) {
-                                Toast.makeText(recycle, "Delete", Toast.LENGTH_SHORT).show();
-
-                            } else {
-                                Toast.makeText(recycle, "error ", Toast.LENGTH_SHORT).show();
-                            }
-
-                    return true;
-                        case R.id.share:
-                            // showHelp();
-                            return true;
-                        case R.id.selectall:
-                            // showHelp();
-                            return true;
-                        default:
-                    }                    return true;
-                }
-            });
-
-
-            popup.show(); //showing popup menu
-
-            return true;
-        }
-    }
+    }}
 
     @Override
     public int getItemCount() {
