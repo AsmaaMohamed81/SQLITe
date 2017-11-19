@@ -75,13 +75,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Vie
 //    @BindView(R.id.txt_detail)TextView textdetale;
         TextView textdetale;
         TextView texttitle;
+        TextView id;
         LinearLayout con;
 
 
         public Holder(View itemView) {
             super(itemView);
+
             texttitle= (TextView) itemView.findViewById(R.id.txt_tit);
             textdetale= (TextView) itemView.findViewById(R.id.txt_detail);
+     //       id=(TextView)itemView.findViewById(R.id.id);
+
             con=(LinearLayout) itemView.findViewById(R.id.con);
 //        ButterKnife.bind(Context);
 
@@ -97,9 +101,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Vie
             position = (int) view.getTag();
             Note dataModel = data.get(position);
 
+
             Intent d = new Intent(recycle, Edit.class);
             d.putExtra("title",dataModel.title);
             d.putExtra("detail",dataModel.Detail);
+       //     d.putExtra("id",dataModel.ID);
             //    d.putExtra("postion",position);
             recycle.startActivity(d);
 

@@ -8,6 +8,17 @@ public class Note {
     public String title;
     public String Detail;
 
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public String getID() {
+
+        return ID;
+    }
+
+    public String ID;
+
     public String getTitle() {
         return title;
     }

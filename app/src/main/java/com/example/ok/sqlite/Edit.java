@@ -45,6 +45,7 @@ public class Edit extends AppCompatActivity {
         Intent i= getIntent();
          String tit =i.getStringExtra("title").trim();
        String det= i.getStringExtra("detail").trim();
+       // String id=i.getStringExtra("id").trim();
         title.setText(tit);
         details.setText(det);
 
